@@ -30,9 +30,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_04_071655) do
   end
 
   create_table "charging_sessions", force: :cascade do |t|
-    t.decimal "duration_in_hours", precision: 4, scale: 2
-    t.decimal "consumed_power", precision: 6, scale: 2
-    t.boolean "active"
+    t.decimal "duration_in_hours", precision: 4, scale: 2, default: "0.0"
+    t.decimal "consumed_power", precision: 6, scale: 2, default: "0.0"
+    t.boolean "active", default: true
     t.bigint "user_id"
     t.bigint "connector_id"
     t.datetime "created_at", null: false
