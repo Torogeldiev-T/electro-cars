@@ -1,24 +1,38 @@
-# README
+## Electro cars
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Electro cars API app, read the documentation [here](https://www.postman.com/sardaratvertex/workspace/my-workspace/api/5ac890ca-dcd6-4c35-b967-951c5383c380)
+# Requiremants
+* Ruby version - 3.1.2p20
+* Rails - 7.0.4
+# Starting app locally
 
-Things you may want to cover:
+Clone repository
 
-* Ruby version
+```bash
+git clone with https://github.com/Torogeldiev-T/electro-cars.git
+```
 
-* System dependencies
+Install requirements
 
-* Configuration
+```bash
+bundle install
+```
 
-* Database creation
+Database setup
 
-* Database initialization
+```bash
+rails db:create
+rails db:migrate
+```
 
-* How to run the test suite
+* Run seeds to initialize with database with data (development only) 
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+rails db:seed
+```
 
-* Deployment instructions
+# Run tests
 
-* ...
+```bash
+bundle exec rspec
+```
