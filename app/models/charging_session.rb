@@ -54,13 +54,13 @@ class ChargingSession < ApplicationRecord
     end
     unless user_and_connector_plugs_match?
       errors.add(:user, :plug_do_not_match,
-                 message: 'plug does not have matching plug')
+                 message: 'does not have matching plug')
     end
     errors.add(:connector, :occupied, message: 'has already been occupied') unless connector_is_free?
   end
 
   def user_and_connector_plugs_match?
-    user.plug = connector.plug || user.adapter.where(plug_from: user.plug, plug_to: connector.plug)
+    user.plug == connector.plug || user.adapters.where(plug_from: user.plug, plug_to: connector.plug).any?
   end
 
   def user_has_no_active_sessions?

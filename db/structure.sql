@@ -97,9 +97,9 @@ CREATE TABLE public.ar_internal_metadata (
 
 CREATE TABLE public.charging_sessions (
     id bigint NOT NULL,
-    duration_in_hours numeric(4,2),
-    consumed_power numeric(6,2),
-    active boolean,
+    duration_in_hours numeric(4,2) DEFAULT 0.0,
+    consumed_power numeric(6,2) DEFAULT 0.0,
+    active boolean DEFAULT true,
     user_id bigint,
     connector_id bigint,
     created_at timestamp(6) without time zone NOT NULL,

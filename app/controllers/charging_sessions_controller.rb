@@ -26,7 +26,7 @@ class ChargingSessionsController < ApplicationController
       if charging_session.errors.empty?
         render json: charging_session, status: 201, location: charging_session_path(charging_session)
       else
-        render json: { error: charging_session.errors.full_messages.join(".\n") }, status: :unprocessable_entity
+        render json: { error: charging_session.errors.full_messages.join('. ') }, status: :unprocessable_entity
       end
     else
       render json: { error: 'Connector Or User Not Found.' }, status: 400
@@ -42,7 +42,7 @@ class ChargingSessionsController < ApplicationController
       if charging_session.errors.empty?
         render json: charging_session, status: 200, location: charging_session_path(charging_session)
       else
-        render json: { error: charging_session.errors.full_messages.join("\n") }, status: :unprocessable_entity
+        render json: { error: charging_session.errors.full_messages.join(". ") }, status: :unprocessable_entity
       end
     else
       render json: { error: 'Session Not Found.' }, status: 404

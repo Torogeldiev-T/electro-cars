@@ -25,5 +25,6 @@ module ElectroCars
     config.api_only = true
 
     config.debug_exception_response_format = :api
+    config.active_record.schema_format = :sql
   end
 end
